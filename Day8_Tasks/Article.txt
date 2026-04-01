@@ -1,0 +1,7 @@
+This is a basic text file.
+
+It contains simple sentences.
+There is no special formatting.
+
+You can write anything here.
+This is just an example.
