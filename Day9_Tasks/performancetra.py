@@ -1,0 +1,13 @@
+import time
+def timer(func):
+    def wrapper():
+        start=time.time()
+        func()
+        end=time.time()
+        print("Execution time:",end-start)
+    return wrapper
+@timer
+def test():
+    for i in range(1000000):
+        pass
+test()
