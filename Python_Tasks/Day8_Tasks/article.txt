@@ -1,3 +1,0 @@
-Read the file
-Display all student records
-Calculate and display the average marks of the class
