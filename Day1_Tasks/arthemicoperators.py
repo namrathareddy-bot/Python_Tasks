@@ -1,0 +1,10 @@
+"""1. Write a program to add two numbers using arithmetic operators.  """
+num1 = int(input("enter number:"))
+num2 = int(input("enter number:"))
+print("Addition of two numbers is: ",num1+num2)
+print("Subtraction of two numbers is: ", num1-num2)
+print("Multiplication of two numbers is: ",num1*num2)
+print("Division of two numbers is:",num1/num2)
+print("Exponentiation of two numbers is:",num1**num2)
+print("Floor division of two numbers is: ",num1//num2)
+print("Modulo division of two numbers is: ",num1|num2)
