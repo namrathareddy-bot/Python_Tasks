@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Library Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Main Heading -->
+
+        <h1>📚 Library Management System</h1>
+
+        <p class="subtitle">
+            Manage books, students, issue and return records easily
+        </p>
+
+        <!-- Navigation Buttons -->
+
+        <div class="menu">
+
+            <a href="/books">📖 View Books</a>
+
+            <a href="/add-book">➕ Add Book</a>
+
+            <a href="/students">👨‍🎓 Students</a>
+
+            <a href="/issue-book">📕 Issue Book</a>
+
+            <a href="/return-book">📗 Return Book</a>
+
+            <a href="/login">🔐 Login</a>
+
+        </div>
+
+        <!-- Dashboard Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>Books</h2>
+                <p>
+                    View and manage all books available in the library.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Students</h2>
+                <p>
+                    Store and manage student details easily.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Issue & Return</h2>
+                <p>
+                    Issue books and track returned books efficiently.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

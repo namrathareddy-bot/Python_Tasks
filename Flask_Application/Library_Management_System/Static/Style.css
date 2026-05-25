@@ -1,0 +1,403 @@
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+    font-family: Arial, sans-serif;
+    background: #050807;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container{
+
+    width: 85%;
+
+    margin: 40px auto;
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(9,40,32,0.95),
+            rgba(4,10,9,0.98)
+        ),
+
+        radial-gradient(
+            circle at right,
+            #00ffd566,
+            transparent 35%
+        );
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow: 0 0 60px rgba(0,255,200,0.12);
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1{
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+h1 span{
+
+    color: #19f5c3;
+}
+
+h2{
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+
+    color: #19f5c3;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle{
+
+    color: #c8d8d4;
+
+    font-size: 18px;
+
+    margin-bottom: 40px;
+
+    line-height: 30px;
+}
+
+
+/* =========================================================
+   MENU BUTTONS
+========================================================= */
+
+.menu{
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 45px;
+}
+
+a{
+
+    text-decoration: none;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+
+    font-size: 15px;
+}
+
+a:hover{
+
+    background: #19f5c3;
+
+    color: #00110d;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 20px rgba(0,255,200,0.2);
+}
+
+
+/* =========================================================
+   CARDS SECTION
+========================================================= */
+
+.cards{
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   CARD DESIGN
+========================================================= */
+
+.card{
+
+    min-height: 210px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    transition: 0.3s;
+}
+
+.card:hover{
+
+    background: rgba(25,245,195,0.12);
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0,255,200,0.12);
+}
+
+.card h2{
+
+    font-size: 23px;
+
+    color: white;
+
+    margin-bottom: 15px;
+}
+
+.card p{
+
+    color: #b9ccc8;
+
+    line-height: 26px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   TABLE DESIGN
+========================================================= */
+
+table{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+th{
+
+    background: rgba(25,245,195,0.18);
+
+    color: #19f5c3;
+
+    font-size: 16px;
+}
+
+th, td{
+
+    padding: 16px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    text-align: center;
+}
+
+td{
+
+    background: rgba(255,255,255,0.04);
+
+    color: #e8f5f2;
+}
+
+tr:hover td{
+
+    background: rgba(25,245,195,0.08);
+}
+
+
+/* =========================================================
+   FORM DESIGN
+========================================================= */
+
+form{
+
+    max-width: 430px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+
+/* =========================================================
+   INPUT FIELDS
+========================================================= */
+
+input{
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    background: rgba(0,0,0,0.35);
+
+    color: white;
+
+    font-size: 15px;
+}
+
+input::placeholder{
+
+    color: #9caeaa;
+}
+
+input:focus{
+
+    outline: none;
+
+    border-color: #19f5c3;
+
+    box-shadow: 0 0 10px rgba(25,245,195,0.3);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button{
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #19f5c3;
+
+    color: #00110d;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover{
+
+    background: white;
+
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   LOGIN MESSAGE
+========================================================= */
+
+h3{
+
+    margin-top: 20px;
+
+    color: #19f5c3;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media screen and (max-width: 768px){
+
+    .container{
+
+        width: 92%;
+
+        padding: 25px;
+    }
+
+    h1{
+
+        font-size: 38px;
+    }
+
+    h2{
+
+        font-size: 28px;
+    }
+
+    form{
+
+        width: 100%;
+    }
+
+    .menu{
+
+        flex-direction: column;
+    }
+
+    a{
+
+        display: block;
+
+        text-align: center;
+    }
+}
