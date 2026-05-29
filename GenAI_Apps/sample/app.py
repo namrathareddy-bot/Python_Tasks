@@ -1,0 +1,24 @@
+import os
+from google import genai
+from google.genai import types
+from dotenv import load_dotenv
+ 
+load_dotenv()
+ 
+def generate(question: str):
+    client = genai.Client(
+        api_key=os.environ.get("GEMINI_API_KEY"),
+    )
+ 
+    model = "gemini-3-flash-preview"
+ 
+    for chunk in client.models.generate_content_stream(
+        model=model,
+        contents=question,
+    ):
+        if text := chunk.text:
+            print(text, end="")
+ 
+if __name__ == "__main__":
+    question = input("What is AI: ")
+    generate(question)
