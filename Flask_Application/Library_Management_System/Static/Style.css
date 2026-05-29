@@ -1,403 +1,263 @@
-/* =========================================================
-   GLOBAL STYLES
-========================================================= */
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
-
-
-/* =========================================================
-   BODY
-========================================================= */
 
 body{
-    font-family: Arial, sans-serif;
-    background: #050807;
-    color: white;
-    min-height: 100vh;
+    min-height:100vh;
+    background:#050807;
+    color:white;
+    padding:35px;
 }
-
-
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
 
 .container{
-
-    width: 85%;
-
-    margin: 40px auto;
-
-    padding: 40px;
-
-    border-radius: 28px;
-
+    width:88%;
+    margin:auto;
+    padding:45px;
+    border-radius:35px;
     background:
-        linear-gradient(
-            135deg,
-            rgba(9,40,32,0.95),
-            rgba(4,10,9,0.98)
-        ),
-
-        radial-gradient(
-            circle at right,
-            #00ffd566,
-            transparent 35%
-        );
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow: 0 0 60px rgba(0,255,200,0.12);
+        radial-gradient(circle at right, rgba(0,255,210,0.28), transparent 35%),
+        linear-gradient(135deg,#07110e,#0f231f,#07110e);
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 0 45px rgba(0,255,200,0.12);
 }
 
+.navbar,.menu{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:70px;
+}
 
-/* =========================================================
-   HEADINGS
-========================================================= */
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.logo span,
+h1 span{
+    color:#19f5c3;
+}
+
+.menu a,
+.nav-links a,
+.hero-buttons a,
+.card a{
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.15);
+    margin-right:10px;
+    transition:0.3s;
+}
+
+.menu a:hover,
+.nav-links a:hover,
+.hero-buttons a:hover,
+.card a:hover{
+    background:#19f5c3;
+    color:#00110d;
+}
 
 h1{
-
-    font-size: 55px;
-
-    font-weight: 400;
-
-    margin-bottom: 15px;
+    font-size:68px;
+    font-weight:300;
+    margin-bottom:18px;
 }
-
-h1 span{
-
-    color: #19f5c3;
-}
-
-h2{
-
-    font-size: 34px;
-
-    margin-bottom: 25px;
-
-    color: #19f5c3;
-}
-
-
-/* =========================================================
-   SUBTITLE
-========================================================= */
 
 .subtitle{
-
-    color: #c8d8d4;
-
-    font-size: 18px;
-
-    margin-bottom: 40px;
-
-    line-height: 30px;
+    color:#c7d7d3;
+    font-size:18px;
+    margin-bottom:55px;
+    line-height:30px;
 }
 
-
-/* =========================================================
-   MENU BUTTONS
-========================================================= */
-
-.menu{
-
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 45px;
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    margin-bottom:70px;
 }
 
-a{
-
-    text-decoration: none;
-
-    color: white;
-
-    padding: 12px 18px;
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    border-radius: 12px;
-
-    background: rgba(255,255,255,0.05);
-
-    transition: 0.3s;
-
-    font-size: 15px;
+.hero-text{
+    flex:1;
 }
 
-a:hover{
-
-    background: #19f5c3;
-
-    color: #00110d;
-
-    transform: translateY(-4px);
-
-    box-shadow: 0 10px 20px rgba(0,255,200,0.2);
+.hero-buttons{
+    margin-top:35px;
 }
 
+.hero-card{
+    width:380px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
 
-/* =========================================================
-   CARDS SECTION
-========================================================= */
+.small-card{
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    transition:0.3s;
+}
+
+.small-card:hover{
+    background:rgba(25,245,195,0.12);
+    transform:translateY(-5px);
+}
+
+.small-card h3{
+    color:#cfe5df;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.small-card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#19f5c3;
+}
 
 .cards{
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
-
-    gap: 18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.12);
 }
 
-
-/* =========================================================
-   CARD DESIGN
-========================================================= */
-
 .card{
-
-    min-height: 210px;
-
-    padding: 25px;
-
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.06);
-
-    border: 1px solid rgba(255,255,255,0.14);
-
-    transition: 0.3s;
+    min-height:250px;
+    padding:28px;
+    background:rgba(5,15,12,0.94);
+    border-right:1px solid rgba(255,255,255,0.12);
+    border-bottom:1px solid rgba(255,255,255,0.12);
+    transition:0.3s;
 }
 
 .card:hover{
+    background:rgba(17,52,43,0.95);
+}
 
-    background: rgba(25,245,195,0.12);
-
-    transform: translateY(-8px);
-
-    box-shadow: 0 15px 30px rgba(0,255,200,0.12);
+.card::before{
+    content:"📚";
+    display:block;
+    font-size:52px;
+    text-align:center;
+    margin-bottom:18px;
 }
 
 .card h2{
-
-    font-size: 23px;
-
-    color: white;
-
-    margin-bottom: 15px;
+    font-size:22px;
+    margin-bottom:18px;
+    color:white;
+    font-weight:500;
 }
 
 .card p{
-
-    color: #b9ccc8;
-
-    line-height: 26px;
-
-    font-size: 15px;
+    color:#c8d7d4;
+    line-height:28px;
+    font-size:15px;
 }
 
-
-/* =========================================================
-   TABLE DESIGN
-========================================================= */
-
-table{
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    margin-top: 25px;
-
-    overflow: hidden;
-
-    border-radius: 18px;
+.card a{
+    display:inline-block;
+    margin-top:20px;
+    color:#19f5c3;
+    background:none;
+    border:none;
+    padding:0;
 }
-
-th{
-
-    background: rgba(25,245,195,0.18);
-
-    color: #19f5c3;
-
-    font-size: 16px;
-}
-
-th, td{
-
-    padding: 16px;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    text-align: center;
-}
-
-td{
-
-    background: rgba(255,255,255,0.04);
-
-    color: #e8f5f2;
-}
-
-tr:hover td{
-
-    background: rgba(25,245,195,0.08);
-}
-
-
-/* =========================================================
-   FORM DESIGN
-========================================================= */
 
 form{
-
-    max-width: 430px;
-
-    margin: auto;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    background: rgba(255,255,255,0.06);
-
-    border: 1px solid rgba(255,255,255,0.15);
+    max-width:450px;
+    padding:35px;
+    border-radius:20px;
+    background:rgba(5,15,12,0.95);
+    border:1px solid rgba(255,255,255,0.12);
 }
-
-
-/* =========================================================
-   INPUT FIELDS
-========================================================= */
 
 input{
-
-    width: 100%;
-
-    padding: 14px;
-
-    margin-top: 15px;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(255,255,255,0.18);
-
-    background: rgba(0,0,0,0.35);
-
-    color: white;
-
-    font-size: 15px;
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:none;
+    border-radius:12px;
+    background:#09120f;
+    border:1px solid rgba(255,255,255,0.15);
+    color:white;
+    font-size:15px;
 }
-
-input::placeholder{
-
-    color: #9caeaa;
-}
-
-input:focus{
-
-    outline: none;
-
-    border-color: #19f5c3;
-
-    box-shadow: 0 0 10px rgba(25,245,195,0.3);
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
 
 button{
-
-    width: 100%;
-
-    margin-top: 20px;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #19f5c3;
-
-    color: #00110d;
-
-    font-weight: bold;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#19f5c3;
+    color:#00110d;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
-
-    background: white;
-
-    transform: scale(1.03);
+    background:white;
 }
 
-
-/* =========================================================
-   LOGIN MESSAGE
-========================================================= */
-
-h3{
-
-    margin-top: 20px;
-
-    color: #19f5c3;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
 }
 
+th,td{
+    padding:16px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.12);
+}
 
-/* =========================================================
-   RESPONSIVE DESIGN
-========================================================= */
+th{
+    background:rgba(25,245,195,0.12);
+    color:#19f5c3;
+}
 
-@media screen and (max-width: 768px){
+td{
+    background:rgba(255,255,255,0.04);
+}
+
+@media(max-width:900px){
+    .cards{
+        grid-template-columns:1fr;
+    }
 
     .container{
-
-        width: 92%;
-
-        padding: 25px;
+        width:95%;
+        padding:25px;
     }
 
     h1{
-
-        font-size: 38px;
+        font-size:42px;
     }
 
-    h2{
-
-        font-size: 28px;
+    .menu,
+    .navbar{
+        flex-direction:column;
+        gap:15px;
     }
 
-    form{
-
-        width: 100%;
+    .hero{
+        flex-direction:column;
     }
 
-    .menu{
-
-        flex-direction: column;
-    }
-
-    a{
-
-        display: block;
-
-        text-align: center;
+    .hero-card{
+        width:100%;
     }
 }

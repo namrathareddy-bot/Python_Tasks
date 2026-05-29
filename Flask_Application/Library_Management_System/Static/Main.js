@@ -1,55 +1,43 @@
-// ------------------------------------------------
-// Welcome Message
-// ------------------------------------------------
-
-console.log("Library Management System Loaded");
-
-
-// ------------------------------------------------
-// Login Validation
-// ------------------------------------------------
-
-function loginValidation(){
-
-    alert("Login Successful");
+// LOGIN
+function login() {
+    fetch("http://127.0.0.1:5001/api/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.message) window.location.href = "/home";
+        else alert("Invalid login");
+    });
 }
 
-
-// ------------------------------------------------
-// Register Validation
-// ------------------------------------------------
-
-function registerValidation(){
-
-    alert("Registration Successful");
+// ISSUE BOOK
+function issueBook() {
+    fetch("http://127.0.0.1:5001/api/issue", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            book_id: document.getElementById("book_id").value,
+            user: document.getElementById("user").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message || data.error));
 }
 
-
-// ------------------------------------------------
-// Add Book Message
-// ------------------------------------------------
-
-function addBook(){
-
-    alert("Book Added Successfully");
-}
-
-
-// ------------------------------------------------
-// Issue Book Message
-// ------------------------------------------------
-
-function issueBook(){
-
-    alert("Book Issued Successfully");
-}
-
-
-// ------------------------------------------------
-// Return Book Message
-// ------------------------------------------------
-
-function returnBook(){
-
-    alert("Book Returned Successfully");
+// RETURN BOOK
+function returnBook() {
+    fetch("http://127.0.0.1:5001/api/return", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            book_id: document.getElementById("book_id").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
 }

@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <title>Issue Book</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h2>Issue Book</h2>
-
-        <form action="/issue-book" method="POST">
-
-            <input type="text"
-                   name="book_id"
-                   placeholder="Book ID"
-                   required>
-
-            <button type="submit">Issue Book</button>
-
-        </form>
-
-        <br>
-
-        <a href="/">Back Home</a>
-
+    <div class="menu">
+        <div>
+            <a href="/">Home</a>
+            <a href="/books-page">View Books</a>
+            <a href="/add-book">Add Book</a>
+            <a href="/return-book">Return Book</a>
+        </div>
     </div>
+
+    <h1>Issue <span>Book</span></h1>
+
+    <p class="subtitle">
+        Enter issue details to assign a book to a member.
+    </p>
+
+    <form action="/issue" method="POST">
+
+        <input type="number" name="issue_id" placeholder="Enter Issue ID" required>
+
+        <input type="number" name="book_id" placeholder="Enter Book ID" required>
+
+        <input type="number" name="member_id" placeholder="Enter Member ID" required>
+
+        <input type="date" name="issue_date" required>
+
+        <input type="date" name="return_date" required>
+
+        <button type="submit">Issue Book</button>
+
+    </form>
+
+</div>
 
 </body>
 </html>

@@ -1,60 +1,84 @@
+<!-- =========================================================
+FILE: Templates/Books.html
+========================================================= -->
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-    <title>Books</title>
+    <title>Library Books</title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h2>Books List</h2>
+    <!-- ================= MENU ================= -->
 
-        <table>
+    <div class="menu">
 
-            <tr>
-
-                <th>Book ID</th>
-
-                <th>Title</th>
-
-                <th>Author</th>
-
-                <th>Status</th>
-
-            </tr>
-
-            {% for book in books %}
-
-            <tr>
-
-                <td>{{ book.book_id }}</td>
-
-                <td>{{ book.title }}</td>
-
-                <td>{{ book.author }}</td>
-
-                <td>{{ book.status }}</td>
-
-            </tr>
-
-            {% endfor %}
-
-        </table>
-
-        <br>
-
-        <a href="/add-book">Add Book</a>
-
-        <a href="/">Back Home</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/add-book">Add Book</a>
+            <a href="/issue-book">Issue Book</a>
+            <a href="/return-book">Return Book</a>
+        </div>
 
     </div>
+
+
+    <!-- ================= HEADING ================= -->
+
+    <h1>Library <span>Books</span></h1>
+
+    <p class="subtitle">
+
+        Discover and manage all books available in the library system.
+
+    </p>
+
+
+    <!-- ================= CARDS ================= -->
+
+    <div class="cards">
+
+        {% for book in books %}
+
+        <div class="card">
+
+            <h2>{{ book.title }}</h2>
+
+            <p>
+                <b>Book ID:</b>
+                {{ book.book_id }}
+            </p>
+
+            <p>
+                <b>Author:</b>
+                {{ book.author }}
+            </p>
+
+            <p>
+                <b>Status:</b>
+                {{ book.status }}
+            </p>
+
+            <a href="/delete-book/{{ book.book_id }}">
+                Delete →
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
 
 </body>
 </html>
