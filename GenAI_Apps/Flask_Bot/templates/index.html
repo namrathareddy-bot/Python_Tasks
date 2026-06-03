@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask AI Database Assistant (NL2SQL)</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Background glows -->
+    <div class="background-decor animate-glow1"></div>
+    <div class="background-decor animate-glow2"></div>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">🤖</div>
+                <h1>Flask SQL Bot</h1>
+                <span class="badge">Flask + Gemini</span>
+            </div>
+            <p class="subtitle">Interact with MySQL using natural conversation powered by Flask & Gemini</p>
+        </header>
+
+        <main class="chat-container glass">
+            <!-- Output Area -->
+            <div class="output-box" id="outputBox">
+                <div class="message system-msg animate-fade">
+                    <div class="msg-avatar">✦</div>
+                    <div class="msg-content">
+                        Hello! I am your Flask-powered Database Assistant. Ask me questions about database records like: <b>"How many students are there in the table?"</b> or <b>"Show all available books"</b>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestion Chips -->
+            <div class="suggestions-row" id="suggestions">
+                <button class="chip" onclick="useSuggestion('How many students are there in the table?')">Count Students</button>
+                <button class="chip" onclick="useSuggestion('Show all available books')">Available Books</button>
+                <button class="chip" onclick="useSuggestion('Which books are currently issued?')">Issued Books</button>
+                <button class="chip" onclick="useSuggestion('List all users and their emails')">Show Users</button>
+            </div>
+
+            <!-- Input Box -->
+            <div class="input-form">
+                <input type="text" id="userInput" placeholder="Ask a question about the database..." autocomplete="off" onkeydown="handleKeydown(event)">
+                <button class="send-btn" id="sendBtn" onclick="askQuestion()">
+                    <span>Query</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            Flask Web Server • PyMySQL • Google GenAI SDK
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
